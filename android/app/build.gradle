@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 import com.android.build.OutputFile
 
@@ -182,6 +183,7 @@ dependencies {
     implementation project(':react-native-webview')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    compile project(":react-native-shared-preferences")
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";

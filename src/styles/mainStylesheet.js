@@ -38,6 +38,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 10
     },
+    favouriteButton: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 5,
+    },
     pokemonButtonText: {
         fontSize: 16,
         color: "#FFFAF0",

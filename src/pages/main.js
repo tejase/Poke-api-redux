@@ -5,8 +5,10 @@ import styles from '../styles/mainStylesheet'
 
 import { fetchPoke } from '../reduxStore/actions/pokeActions';
 import { connect } from 'react-redux'
-import { StateUtils } from 'react-navigation';
 import PropTypes from 'prop-types';
+var SharedPreferences = require('react-native-shared-preferences');
+
+import {Icon} from 'native-base';
 
  class Main extends Component {
     static navigationOptions = {
@@ -14,16 +16,27 @@ import PropTypes from 'prop-types';
     };
 
     state = {
-        pokemonInfo: {},
-        results: [],
-        offSet: 0,
-        limit: 20,
-        ImageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+        // pokemonInfo: {},
+        // results: [],
+        // offSet: 0,
+        // limit: 20,
+         ImageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/",
+        favourites: [],
     };
 
     componentDidMount() {
         //this.loadPokemons();
         this.props.fetchPoke();
+        let ref = this;
+        SharedPreferences.getAllKeys(function(keys){
+            //console.log('ll',keys);
+            if(typeof keys !== "undefined"){
+            //this.setState({ favourites: keys })
+            console.log('ke',keys);
+            ref.setState({favourites: keys});
+            }
+          });
+
     }
 
 
@@ -48,7 +61,7 @@ import PropTypes from 'prop-types';
     loadMore = () => {
         console.log('this.loadmore');
         const  offSet = this.props.randomPoke.offSet;
-        // Pages 'a variavel de numero maximo de paginas nessa api utlizada como exemplo
+        
         //if (pokemonInfo.next == null) return;
 
         this.setState((prevState) =>({
@@ -70,6 +83,31 @@ import PropTypes from 'prop-types';
         return id;
     }
 
+    TickFav = rowData => {
+        // rowData.is_fav = !rowData.is_fav
+        // this.setState({});
+        if(this.state.favourites.includes(rowData.name)){
+
+            SharedPreferences.setItem(rowData.name,rowData.url);
+
+            var joined = this.state.favourites;
+            const index = joined.indexOf(rowData.name);
+            if (index > -1) {
+                joined.splice(index, 1);
+              }
+            this.setState({ favourites: joined })
+        }
+        else{
+        SharedPreferences.removeItem(rowData.name);
+        // SharedPreferences.getAllKeys(function(keys){
+        //     console.log('keys',keys);
+        //   });
+        var joined = this.state.favourites.concat(rowData.name);
+        this.setState({ favourites: joined })
+        console.log('rowdata',rowData);
+        }
+      }
+
     
     renderItem = ({ item }) => (
         <View style={styles.pokemonContainer}>
@@ -84,16 +122,29 @@ import PropTypes from 'prop-types';
                 }}
             >
                 <Text style={styles.pokemonButtonText}>Check Pokemon</Text>
+                
             </TouchableOpacity>
+            <TouchableOpacity style = { styles.favouriteButton } onPress={() => this.TickFav(item)} >
+            {this.state.favourites.includes(item.name)? <Icon name='heart' />: <Icon name='heart-outline' /> }
+           
+            </TouchableOpacity>
+            
+            
+            
+            
         </View>
     );
     render() {
+        //console.log('ff',this.state.favourites);
         //console.log('bla',this.props.randomPoke.isFetching);
-        console.log('dd',this.props.randomPoke);
+        //console.log('dd',this.props.randomPoke);
         if(this.props.randomPoke.isFetching == false){
         return (
             <View style={styles.container}>
                 <FlatList
+
+                    extraData = {this.state}
+
                     contentContainerStyle={styles.list}
                     data={this.props.randomPoke.results}
                     keyExtractor={item => item.url}

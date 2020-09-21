@@ -20,8 +20,10 @@ export const fetchPoke = (offSet) => {
         try{
             let response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`);
             let json = await response.json();
-            console.log('hey',json.results);
-            console.log('resux',offSet);
+            let x = json
+            x = {...x, isFav: 'True' };
+            //console.log('hey',x);
+            //console.log('resux',offSet);dsf
             dispatch(fetchingPokeSuccess(json.results));
             // return {
             //     type: MAXIMUM_SAVINGS,

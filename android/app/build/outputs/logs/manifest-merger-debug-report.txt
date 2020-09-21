@@ -5,6 +5,7 @@ INJECTED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.
 INJECTED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.xml:1:1-25:12
 INJECTED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.xml:1:1-25:12
 MERGED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.xml:1:1-25:12
+MERGED from [:react-native-shared-preferences] E:\intern\reactnative\myways\node_modules\react-native-shared-preferences\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-webview] E:\intern\reactnative\myways\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-23:12
 MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\Tejas\.gradle\caches\transforms-2\files-2.1\6ae0de880480679aff443c4aac9ecf62\AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r245459] C:\Users\Tejas\.gradle\caches\transforms-2\files-2.1\a16935d1e1cfa59dc1cd8bfe56ef9b5b\AndroidManifest.xml:2:1-11:12
@@ -132,6 +133,8 @@ uses-sdk
 INJECTED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.xml
 INJECTED from E:\intern\reactnative\myways\android\app\src\main\AndroidManifest.xml
+MERGED from [:react-native-shared-preferences] E:\intern\reactnative\myways\node_modules\react-native-shared-preferences\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-shared-preferences] E:\intern\reactnative\myways\node_modules\react-native-shared-preferences\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-webview] E:\intern\reactnative\myways\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-webview] E:\intern\reactnative\myways\node_modules\react-native-webview\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.61.5] C:\Users\Tejas\.gradle\caches\transforms-2\files-2.1\6ae0de880480679aff443c4aac9ecf62\AndroidManifest.xml:7:5-9:41

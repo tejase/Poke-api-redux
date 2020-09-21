@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import com.hunt.BuildConfig;
 import com.hunt.R;
 
+// react-native-shared-preferences
+import in.sriraman.sharedpreferences.RNSharedPreferencesReactPackage;
 // react-native-webview
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 
@@ -61,6 +63,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
+      new RNSharedPreferencesReactPackage(),
       new RNCWebViewPackage()
     ));
   }
