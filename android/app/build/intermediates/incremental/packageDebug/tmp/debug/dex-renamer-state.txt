@@ -1,4 +1,4 @@
-#Mon Sep 21 16:30:20 IST 2020
+#Mon Sep 21 17:52:18 IST 2020
 base.0=E\:\\intern\\reactnative\\myways\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 path.0=classes.dex
