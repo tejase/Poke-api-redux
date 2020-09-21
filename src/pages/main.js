@@ -88,7 +88,19 @@ import {Icon} from 'native-base';
         // this.setState({});
         if(this.state.favourites.includes(rowData.name)){
 
-            SharedPreferences.setItem(rowData.name,rowData.url);
+            
+
+            SharedPreferences.removeItem(rowData.name);
+            console.log('ent');
+
+            SharedPreferences.getAllKeys(function(keys){
+                //console.log('ll',keys);
+              
+                //this.setState({ favourites: keys })
+                console.log('ke',keys);
+                
+               
+              });
 
             var joined = this.state.favourites;
             const index = joined.indexOf(rowData.name);
@@ -98,7 +110,9 @@ import {Icon} from 'native-base';
             this.setState({ favourites: joined })
         }
         else{
-        SharedPreferences.removeItem(rowData.name);
+
+            SharedPreferences.setItem(rowData.name,rowData.url);
+        
         // SharedPreferences.getAllKeys(function(keys){
         //     console.log('keys',keys);
         //   });

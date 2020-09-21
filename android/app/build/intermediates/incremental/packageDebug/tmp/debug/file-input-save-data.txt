@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Sep 21 17:52:19 IST 2020
+#Mon Sep 21 19:57:59 IST 2020
 70.path=lib/arm64-v8a/libjsijniprofiler.so
 78.base=E\:\\intern\\reactnative\\myways\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 64.base=E\:\\intern\\reactnative\\myways\\android\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
